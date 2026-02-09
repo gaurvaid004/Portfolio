@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurav Vaid - Strategic Business Leader</title>
+    <style>
+        :root {
+            --primary-color: #0a0e27;
+            --secondary-color: #6366f1;
+            --accent-color: #a78bfa;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --gradient-start: #4f46e5;
+            --gradient-end: #7c3aed;
+            --glow-color: rgba(99, 102, 241, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(3deg); }
+            66% { transform: translateY(-10px) rotate(-3deg); }
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color); }
+            50% { box-shadow: 0 0 30px var(--glow-color), 0 0 60px var(--glow-color); }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(-45deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(167, 139, 250, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            animation: gradient-shift 10s ease infinite;
+            color: var(--white);
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.4) 0%, transparent 25%),
+                radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.4) 0%, transparent 25%),
+                radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 25%);
+            animation: float 20s ease-in-out infinite;
+            opacity: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="3" fill="rgba(255,255,255,0.15)"/><circle cx="25" cy="75" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="25" r="2.5" fill="rgba(255,255,255,0.12)"/></svg>');
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 6px solid var(--white);
+            margin: 0 auto 25px;
+            object-fit: cover;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4), 0 0 40px var(--glow-color);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            opacity: 0.95;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin: 25px 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.15), 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255,255,255,0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .section:hover::before {
+            left: 100%;
+        }
+
+        .section:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.25), 0 5px 15px rgba(0,0,0,0.1);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid transparent;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color)) left bottom no-repeat;
+            background-size: 100% 4px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .icon {
+            font-size: 1.2em;
+        }
+
+        .about-text {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .skill-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.03), rgba(139, 92, 246, 0.03));
+            border-radius: 12px;
+            border-left: 5px solid var(--accent-color);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(139, 92, 246, 0.15);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .job-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .company {
+            font-size: 1.1em;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .duration {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .achievement {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .achievement::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(50, 180, 193, 0.2) 0%, rgba(50, 180, 193, 0.1) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(26, 77, 109, 0.05) 0%, rgba(50, 180, 193, 0.05) 100%);
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .degree {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            font-size: 1.05em;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .award-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), #a78bfa);
+            color: var(--white);
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            margin: 5px 5px 5px 0;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .award-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            background-size: 200% 200%;
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+            animation: pulse-glow 1.5s ease-in-out infinite;
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-icon {
+            font-size: 1.5em;
+            color: var(--secondary-color);
+        }
+
+        .contact-info a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary-color);
+        }
+
+        .interests-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: var(--bg-light);
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 2px solid var(--secondary-color);
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--primary-color);
+            color: var(--white);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .tagline {
+                font-size: 1em;
+            }
+            
+            .stats {
+                gap: 20px;
+            }
+            
+            .stat-number {
+                font-size: 1.5em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/54860256-ca16-405d-91a7-90ebbdb1814b" alt="Gaurav Vaid" class="profile-img">
+            <h1>GAURAV VAID</h1>
+            <p class="tagline">Strategic Business Leader | MBA Candidate | Global Sales & Market Expansion Expert</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">13+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">€3M</span>
+                    <span class="stat-label">Target Portfolio</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5x</span>
+                    <span class="stat-label">Business Growth</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Countries</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- CTA Buttons -->
+        <div class="cta-buttons">
+            <a href="https://www.linkedin.com/in/gauravvaid004" class="btn btn-primary" target="_blank">
+                🔗 Connect on LinkedIn
+            </a>
+            <a href="mailto:gaurvaid@gmail.com" class="btn btn-secondary">
+                📧 Email Me
+            </a>
+            <a href="https://wa.me/447503200443" class="btn btn-secondary" target="_blank">
+                💬 WhatsApp
+            </a>
+        </div>
+
+        <!-- About Section -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">👨‍💼</span>Professional Summary</h2>
+            <p class="about-text">
+                Strategic Client Manager with over <span class="highlight">13 years of global experience</span> in Business Development and Go-to-Market strategy, specializing in Henkel Adhesive and TaeguTec Carbide Cutting Tools. Currently managing a <span class="highlight">€1M business portfolio</span>, aimed to grow to <span class="highlight">€3M by 2026</span> across East Africa.
+            </p>
+            <p class="about-text">
+                Ranked among the <span class="highlight">Top Sales Professionals</span> and awarded for Exceptional Sales Performance in events globally in Germany and South Korea. Distinguished by an evidence-based approach to decision-making and collaborative management style that delivers sustained, high-impact results.
+            </p>
+            <p class="about-text">
+                Currently pursuing MBA at <span class="highlight">Leeds University Business School</span>, focusing on Strategy and Entrepreneurial Management, with proven expertise in translating market insights into action, leading to <span class="highlight">5x business growth</span> and €2M in future revenue identification.
+            </p>
+        </div>
+
+        <!-- Core Competencies -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">⚡</span>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-title">Strategic Planning</div>
+                    <div>Business Planning, Competitive Analysis, Market Positioning</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-title">Market Expansion</div>
+                    <div>Go-to-Market Strategy, Market Intelligence, Revenue Growth</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-title">Account Management</div>
+                    <div>Key Account Development, Stakeholder Management, Partnership Building</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-title">Sales Leadership</div>
+                    <div>Team Management, Performance Optimization, Value Selling</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-title">P&amp;L Management</div>
+                    <div>Budget Management, ROI Maximization, Profit Growth</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-title">Data-Driven Insights</div>
+                    <div>Market Analysis, Customer Segmentation, Performance Metrics</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">💼</span>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="job-title">Account Manager</div>
+                        <div class="company">Bodo Möller Chemie Kenya</div>
+                    </div>
+                    <div class="duration">Aug 2024 – Jul 2025</div>
+                </div>
+                <div class="achievement">Led a team of 3 sales staff in designing go-to-market strategies for Henkel Adhesives, managing <span class="highlight">£1M portfolio</span> with target expansion to <span class="highlight">£3M by 2026</span></div>
+                <div class="achievement">Conducted in-depth market analysis across East Africa, identifying <span class="highlight">€2M untapped growth potential</span></div>
+                <div class="achievement">Managed 20+ stakeholders including OEMs, distributors, and internal teams across Sales, Supply Chain, and Marketing</div>
+                <div class="achievement">Generated profitable sales growth by capitalizing on new opportunities across Oil &amp; Gas, Power, Automotive, Cement, and Medical segments</div>
+                <div class="achievement">Fostered culture of collaboration, mentoring high-performing sales team for sustainable growth</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="job-title">Senior Territory Sales Engineer</div>
+                        <div class="company">Henkel Adhesive Technologies</div>
+                    </div>
+                    <div class="duration">Dec 2016 – Jun 2024</div>
+                </div>
+                <div class="achievement">Achieved <span class="highlight">32% year-on-year growth</span>, contributing <span class="highlight">£2M annual revenue</span> from Oil &amp; Gas, Government Utilities, Power, Cement, and FMCG sectors</div>
+                <div class="achievement">Attained <span class="highlight">5x business expansion</span> through data-driven market analysis and targeted go-to-market initiatives</div>
+                <div class="achievement"><span class="award-badge">🏆 Top 20 Sales Engineers</span> Ranked among Eastern Europe and IMEA Region at Loctite Championship Event in Düsseldorf, Germany (2022)</div>
+                <div class="achievement"><span class="award-badge">🥈 Top 2 in India</span> Best Sales Engineer (MRO Segment) for exceptional revenue performance (2020)</div>
+                <div class="achievement"><span class="award-badge">🥇 Golden Sales Team</span> Achieved status for three consecutive years (2021-2023), Formula E event invitation</div>
+                <div class="achievement">Mentored Top Channel Partner to achieve <span class="highlight">10x business growth</span>, recognized as Fastest Growing Distributor (2021-2022)</div>
+                <div class="achievement">Launched 12 New Products and drove high-value-added product development</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="job-title">Senior Sales Engineer</div>
+                        <div class="company">TaeguTec India Pvt. Ltd.</div>
+                    </div>
+                    <div class="duration">Jul 2012 – Dec 2016</div>
+                </div>
+                <div class="achievement">Drove strategic initiatives for Carbide Cutting Tools Business achieving <span class="highlight">22% YoY Growth</span></div>
+                <div class="achievement"><span class="award-badge">🥈 2nd Prize Global</span> Cost reduction case study competition in Daegu, South Korea - 48% cost reduction, 1.2M€ annual saving (2015)</div>
+                <div class="achievement"><span class="award-badge">🥇 1st Prize</span> TaeguTec Annual Conference Bengaluru for Cost Reduction case study (2014)</div>
+                <div class="achievement">Managed Key Accounts (BHEL, Hero MotoCorp, Honda) achieving <span class="highlight">40% YoY growth</span></div>
+                <div class="achievement">Recognized BHEL Haridwar as Top Key Account with <span class="highlight">€1M+ YTD revenue</span> (2015 &amp; 2016)</div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">🎓</span>Education</h2>
+            
+            <div class="education-item">
+                <div class="degree">MBA - Master of Business Administration</div>
+                <div class="institution">Leeds University Business School, United Kingdom</div>
+                <div class="duration">2025-2026</div>
+                <div class="achievement">Focus: Strategy and Entrepreneurial Management, Analytical Thinking and Data Management</div>
+                <div class="achievement">Modules: Accounting and Finance, Global Marketing Management, Management Decision Making, Leading in Practice</div>
+            </div>
+
+            <div class="education-item">
+                <div class="degree">B.Tech in Mechanical Engineering</div>
+                <div class="institution">Vellore Institute of Technology (VIT)</div>
+                <div class="duration">2012</div>
+                <div class="achievement">Ranked among <span class="highlight">Top 10% in India</span>, CGPA 8.5</div>
+                <div class="achievement">Student Exchange Ambassador - University of Applied Sciences, Regensburg (Germany)</div>
+                <div class="achievement">President of Organizing Committee for Riviera – Annual Cultural Fest (2011)</div>
+                <div class="achievement">Board Member - American Society of Mechanical Engineers (ASME), SAE, ISTE</div>
+            </div>
+        </div>
+
+        <!-- Social Impact -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">❤️</span>Social Action &amp; Volunteering</h2>
+            <p class="about-text">
+                Executed food collection and distribution drives across Delhi NCR, supporting over <span class="highlight">2000 underprivileged individuals</span> through community partnerships in Robin Hood Army (2020-2023).
+            </p>
+        </div>
+
+        <!-- Interests -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">🌟</span>Interests &amp; Passions</h2>
+            <div class="interests-tags">
+                <div class="tag">🪂 Adventure Sports (Certified Bungee Jumper)</div>
+                <div class="tag">🏏 Cricket (University Captain)</div>
+                <div class="tag">✈️ Cross-Cultural Learning (15 Countries)</div>
+                <div class="tag">🌍 International Travel</div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">📞</span>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-info">
+                        <strong>Location</strong><br>
+                        Leeds, United Kingdom
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-info">
+                        <strong>Email</strong><br>
+                        <a href="mailto:gaurvaid@gmail.com">gaurvaid@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-info">
+                        <strong>Mobile (UK)</strong><br>
+                        <a href="tel:+447503200443">+44 7503 200443</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-info">
+                        <strong>WhatsApp</strong><br>
+                        <a href="https://wa.me/918588800745">+91 8588 800745</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🔗</div>
+                    <div class="contact-info">
+                        <strong>LinkedIn</strong><br>
+                        <a href="https://www.linkedin.com/in/gauravvaid004" target="_blank">linkedin.com/in/gauravvaid004</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="cta-buttons">
+            <a href="mailto:gaurvaid@gmail.com?subject=Let's Connect&body=Hi Gaurav, I came across your profile and would like to discuss..." class="btn btn-primary">
+                💼 Let's Collaborate
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Gaurav Vaid. Strategic Business Leader | MBA Candidate at Leeds University Business School</p>
+        <p>Specializing in Global Sales, Market Expansion &amp; Business Strategy</p>
+    </footer>
+
+    <!-- 3D Background Shapes -->
+    <div class="shape-3d"></div>
+    <div class="shape-3d"></div>
+    <div class="shape-3d"></div>
+</body>
+</html>
+
